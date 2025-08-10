@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+  <!-- Star Background -->
+  <div id="stars-background"></div>
+
+   <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="logo">My Portfolio</div>
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="experience.html">Experience</a>
+        <a href="achievements.html">Achievements</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+
+
+<style>
+  #typing-text {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.2rem;
+    font-weight: 700;
+    white-space: nowrap;
+    display: inline-block;
+  }
+  .white-text {
+    color: white;
+  }
+  .blue-text {
+    color: cyan;
+    transition: text-shadow 0.3s ease-in-out;
+  }
+  .blue-text:hover {
+    text-shadow: 0 0 10px cyan, 0 0 20px cyan, 0 0 35px cyan;
+  }
+  .cursor {
+    display: inline-block;
+    margin-left: 2px;
+    color: cyan;
+    font-size: 3rem;
+    animation: blink 0.7s steps(1) infinite;
+  }
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+</style>
+
+
+
+
+  <!-- Hero Section -->
+  <div id="stars-background"></div>
+
+<div class="hero-content">
+  <div class="logo-animation">
+    <!-- Tree Logo SVG -->
+   <svg id="tree-logo" viewBox="0 0 200 200" width="120" height="120">
+  <defs>
+    <!-- Glow Effect -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Trunk -->
+  <path d="M100 180 L100 120" 
+        stroke="cyan" stroke-width="6" stroke-linecap="round" filter="url(#glow)"/>
+
+  <!-- Branches -->
+  <path d="M100 120 L70 90 M100 120 L130 90" 
+        stroke="cyan" stroke-width="4" stroke-linecap="round" filter="url(#glow)"/>
+  <path d="M70 90 L55 70 M130 90 L145 70" 
+        stroke="cyan" stroke-width="3" stroke-linecap="round" filter="url(#glow)"/>
+  <path d="M55 70 L45 55 M145 70 L155 55" 
+        stroke="cyan" stroke-width="2" stroke-linecap="round" filter="url(#glow)"/>
+
+  <!-- Leafy Canopy -->
+  <circle cx="60" cy="60" r="12" fill="none" stroke="cyan" stroke-width="2" filter="url(#glow)"/>
+  <circle cx="80" cy="50" r="14" fill="none" stroke="cyan" stroke-width="2" filter="url(#glow)"/>
+  <circle cx="100" cy="40" r="15" fill="none" stroke="cyan" stroke-width="2" filter="url(#glow)"/>
+  <circle cx="120" cy="50" r="14" fill="none" stroke="cyan" stroke-width="2" filter="url(#glow)"/>
+  <circle cx="140" cy="60" r="12" fill="none" stroke="cyan" stroke-width="2" filter="url(#glow)"/>
+
+  <!-- Glow animation -->
+  <style>
+    #tree-logo path, #tree-logo circle {
+      animation: glowPulse 2s infinite alternate;
+    }
+    @keyframes glowPulse {
+      from { stroke: cyan; filter: drop-shadow(0 0 5px cyan); }
+      to { stroke: #00ffff; filter: drop-shadow(0 0 15px cyan); }
+    }
+  </style>
+</svg>
+
+  </div>
+
+  <!-- Typing Effect -->
+  <h1 id="typing-text"></h1><span class="cursor">|</span>
+
+  <h2>I create stuff sometimes.</h2>
+  <p>I’m a software engineer fascinated by high-impact products and building apps that reach millions.</p>
+  <a href="#contact" class="cta-btn">📧 Say hi!</a>
+</div>
+
+
+<!-- Google Fonts for Futuristic Handwriting -->
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+  #typing-text {
+     font-family: 'Orbitron', sans-serif;
+
+    font-size: 3.5rem;
+    font-weight: 900px;
+    letter-spacing: 2px;
+    color: white;
+    white-space: nowrap;
+  }
+  .cursor {
+    display: inline-block;
+    color: cyan;
+    font-size: 3.5rem;
+    animation: blink 0.7s steps(1) infinite;
+  }
+  @keyframes blink { 50% { opacity: 0; } }
+</style>
+
+<script>
+  const textToType = "Hi, I am Gurleen";
+  let index = 0;
+  const typingSpeed = 100; // ms per letter
+
+  function type() {
+    if (index < textToType.length) {
+      document.getElementById("typing-text").textContent += textToType.charAt(index);
+      index++;
+      setTimeout(type, typingSpeed);
+    }
+  }
+
+  window.onload = type;
+</script>
+
+
+<script>
+  const parts = [
+    { text: "Hi, I am ", class: "white-text" },
+    { text: "Gurleen", class: "blue-text" }
+  ];
+
+  const typingElement = document.getElementById("typing-text");
+  let partIndex = 0, charIndex = 0;
+
+  function typeEffect() {
+    if (partIndex < parts.length) {
+      let span = typingElement.querySelectorAll("span")[partIndex];
+      if (!span) {
+        span = document.createElement("span");
+        span.className = parts[partIndex].class;
+        typingElement.appendChild(span);
+      }
+      span.textContent += parts[partIndex].text.charAt(charIndex);
+      charIndex++;
+      if (charIndex === parts[partIndex].text.length) {
+        partIndex++;
+        charIndex = 0;
+      }
+      setTimeout(typeEffect, 100);
+    }
+  }
+
+  window.onload = typeEffect;
+</script>
+
+
+
+  <!-- About Section -->
+  <section id="about" style="padding: 100px 20px; text-align: center;">
+    <h2>About Me</h2>
+    <p style="max-width: 800px; margin: 20px auto;">
+      I am a passionate developer specializing in creating futuristic, immersive web experiences. 
+      My work blends creativity with technology to deliver world-class digital solutions.
+    </p>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" style="padding: 100px 20px; text-align: center;">
+    <h2>Projects</h2>
+    <div class="project-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; max-width: 1200px; margin: auto;">
+      <div class="project-card" style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px;">
+        <h3>Project 1</h3>
+        <p>A brief description of your amazing project.</p>
+      </div>
+      <div class="project-card" style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px;">
+        <h3>Project 2</h3>
+        <p>A brief description of another great project.</p>
+      </div>
+      <div class="project-card" style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 10px;">
+        <h3>Project 3</h3>
+        <p>A brief description of yet another awesome project.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" style="padding: 100px 20px; text-align: center;">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:your.email@example.com" style="color:#00ffff;">your.email@example.com</a></p>
+    <p>Connect on <a href="#" style="color:#00ffff;">LinkedIn</a> | <a href="#" style="color:#00ffff;">GitHub</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer style="text-align: center; padding: 20px; background: rgba(0,0,0,0.8);">
+    <p>&copy; 2025 Your Name. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Stars Background Script -->
+  <script src="script.js"></script>
+</body>
+</html>

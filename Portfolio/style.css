@@ -1,0 +1,681 @@
+/* RESET AND GLOBAL STYLES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: 'Orbitron', sans-serif;
+  background-color: black;
+  color: white;
+}
+
+/* NAVBAR */
+.navbar {
+  width: 100%;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar .container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.nav-links a {
+  margin: 0 15px;
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #00ffff;
+}
+/* Hero Content over Stars */
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #ccd6f6;
+  z-index: 10;
+}
+
+.logo-animation svg {
+  margin-bottom: 20px;
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: draw-logo 2s ease forwards;
+}
+
+@keyframes draw-logo {
+  to { stroke-dashoffset: 0; }
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.hero-content h2 {
+  font-size: 28px;
+  color: #8892b0;
+  margin: 10px 0;
+}
+
+.hero-content p {
+  max-width: 600px;
+  color: #8892b0;
+  margin: 20px auto;
+  font-size: 18px;
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 5px;
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.cta-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: 1px solid #00ffff;
+  color: #00ffff;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+.cta-btn:hover {
+  background: #00ffff;
+  color: #0a192f;
+}
+.neon-text {
+  color: #00ffff; /* Simple cyan color */
+  text-shadow: none; /* No glow initially */
+  transition: text-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.neon-text:hover {
+  text-shadow:
+    0 0 10px #00ffff,
+    0 0 20px #00ffff,
+    0 0 30px #00ffff,
+    0 0 50px #00ffff;
+  transform: scale(1.05); /* Slight pop effect */
+  cursor: pointer;
+}
+
+
+
+/* HERO SECTION */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content {
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.hero-content.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.hero h2 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 20px;
+  color: #ccc;
+}
+
+/* STARRY BACKGROUND */
+#stars-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* CONTENT SECTIONS */
+.content-section {
+  padding: 120px 20px;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+/* SECTION HEADINGS */
+.content-section h2 {
+  font-size: 32px;  /* ✅ Smaller heading size */
+  margin-bottom: 20px;
+  color: #00ffff;
+}
+
+/* ABOUT SECTION */
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.about-image img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 3px solid #00ffff;
+  object-fit: cover;
+}
+
+.about-text {
+  max-width: 600px;
+  text-align: left;
+}
+
+.about-text p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #ddd;
+}
+
+/* FADE-IN ANIMATION FOR SECTIONS */
+.fade-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* RESPONSIVENESS */
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 36px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .content-section h2 {
+    font-size: 28px;
+  }
+
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text {
+    text-align: center;
+  }
+}
+/* About Section */
+/* Import Old Town and Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Old+Town+Floral&family=Poppins:wght@400;600;700&display=swap');
+
+body {
+  font-family: 'Poppins', 'Nunito Sans', sans-serif;
+  font-weight: 400;
+  background: #000;
+  color: #ccc;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  letter-spacing: 0;
+}
+
+/* About Section */
+.about-section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  padding: 100px 20px;
+  position: relative;
+}
+
+.about-card {
+  background: #000;
+  border-radius: 12px;
+  padding: 40px;
+  max-width: 1100px;
+  width: 100%;
+  opacity: 1;
+  transform: none;
+}
+
+.about-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+/* Use Old Town font only for headings */
+.about-heading,
+.skills-heading {
+  font-family: 'Old Town Floral', cursive;
+  font-size: 28px;
+  color: #ccc;
+  font-weight: normal;
+  margin-bottom: 15px;
+}
+
+/* Paragraph text remains Poppins */
+.aboutdes {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  color: #bbb;
+  margin-bottom: 20px;
+}
+
+.highlight {
+  color: #00bcd4;
+  font-weight: 700;
+}
+
+/* Skills list styling */
+.skills-list {
+  font-size: 16px;
+  color: #999;
+  line-height: 1.5;
+  list-style: none;
+  padding: 0;
+}
+
+.skills-list li {
+  margin-bottom: 8px;
+}
+
+.skills-list li strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+.skills-list li::before {
+  content: "➤ ";
+  color: #999;
+  margin-right: 5px;
+}
+
+/* Image styling (right aligned) remains unchanged */
+.about-image {
+  flex: 0 0 300px;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .about-image {
+    margin-top: 20px;
+    width: 80%;
+  }
+}
+.projects-section {
+  text-align: center;
+  padding: 50px 20px;
+  color: #fff;
+  background: #000;
+}
+
+.projects-heading {
+  font-family: "Poppins", sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.carousel-container {
+  position: relative;
+  width: 80%;
+  max-width: 900px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.project-slide {
+  min-width: 100%;
+  position: relative;
+}
+
+.project-slide img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+}
+
+.project-slide:hover .overlay {
+  opacity: 1;
+}
+
+.overlay h3 {
+  color: #00bcd4;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.overlay p {
+  font-size: 18px;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.arrow.left { left: 10px; }
+.arrow.right { right: 10px; }
+
+.indicators {
+  margin-top: 15px;
+}
+
+.indicator {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background: #777;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.indicator.active {
+  background: #00bcd4;
+}
+/* Navbar */
+.navbar {
+  background: rgba(0, 0, 0, 0.9);
+  padding: 15px 50px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between; /* Logo left, links right */
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 600;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #ccc;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #00ffff; /* Cyan hover/active effect */
+}
+/* Experience Section */
+.experience-section {
+  min-height: 100vh;
+  padding: 100px 20px;
+  background: black;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+}
+
+.experience-heading {
+  font-family: 'Old Town', serif;
+  font-size: 28px;
+  text-align: center;
+  color: #00ffff;
+  margin-bottom: 50px;
+}
+
+/* Timeline Layout */
+.timeline {
+  position: relative;
+  max-width: 700px;
+  margin: auto;
+  padding: 20px 0;
+  border-left: 3px solid #00ffff;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 40px;
+  padding-left: 30px;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Dot on Timeline */
+.timeline-dot {
+  position: absolute;
+  left: -11px;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background: #555;
+  border: 3px solid #00ffff;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+/* Current experience dot glowing */
+.timeline-item.current .timeline-dot {
+  background: #00ffff;
+  box-shadow: 0 0 10px #00ffff;
+}
+
+/* Timeline content */
+.timeline-content {
+  background: #111;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #333;
+}
+
+.timeline-content h3 {
+  font-size: 20px;
+  margin-bottom: 5px;
+  color: #00ffff;
+}
+
+.timeline-content .date {
+  font-size: 14px;
+  color: #aaa;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.timeline-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.highlight {
+  color: #00ffff;
+  font-weight: 700;
+}
+/* Timeline Container */
+.timeline {
+  position: relative;
+  margin: 50px auto;
+  padding-left: 40px;
+  max-width: 900px;
+}
+
+/* Vertical Line */
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: 4px;
+  height: 100%;
+  background: #00ffff; /* Cyan line */
+}
+
+/* Timeline Item (Card) */
+.timeline-item {
+  position: relative;
+  margin-bottom: 50px;
+  padding: 20px 25px;
+  background: rgba(20, 20, 20, 0.95);
+  border-radius: 10px;
+  border: 1px solid #333;
+  width: calc(100% - 60px);
+  color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect */
+.timeline-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 255, 255, 0.3);
+}
+
+/* Dot for Each Item */
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  top: 25px;
+  left: -34px;
+  width: 18px;
+  height: 18px;
+  background: #00ffff;
+  border: 3px solid #000;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Highlight Current Position Dot */
+.timeline-item.current::before {
+  background: #fff; /* Current dot white */
+  border: 3px solid #00ffff; /* Cyan border */
+}
+
+/* Date Text */
+.timeline-date {
+  font-size: 14px;
+  font-weight: 600;
+  color: #00ffff;
+  margin-bottom: 6px;
+}
+
+/* Title */
+.timeline-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+/* Description */
+.timeline-desc {
+  font-size: 16px;
+  color: #ccc;
+  line-height: 1.6;
+}

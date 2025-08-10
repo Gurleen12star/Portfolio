@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="stars.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+ 
+
+  <style>
+    /* Make stars background fixed and behind */
+    #stars-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    /* Contact section styling */
+    .contact-section {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      color: white;
+      padding: 80px 20px;
+    }
+
+    .contact-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    /* Icons row */
+    .contact-icons {
+      margin-bottom: 30px;
+    }
+    .contact-icons a {
+      color: cyan;
+      font-size: 2rem;
+      margin: 0 15px;
+      transition: 0.3s;
+    }
+    .contact-icons a:hover {
+      color: white;
+      text-shadow: 0 0 10px cyan, 0 0 20px cyan;
+    }
+
+    /* Cards */
+    .contact-cards {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .contact-card {
+      background: rgba(255,255,255,0.05);
+      padding: 20px;
+      border-radius: 10px;
+      width: 280px;
+      color: white;
+      box-shadow: 0 0 15px rgba(0,255,255,0.3);
+      transition: transform 0.3s;
+    }
+    .contact-card:hover {
+      transform: translateY(-5px);
+    }
+
+    /* Form */
+    .contact-form {
+      margin-top: 40px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    .contact-form button {
+      padding: 12px 25px;
+      background-color: cyan;
+      color: black;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .contact-form button:hover {
+      background-color: white;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <div id="stars-background"></div>
+
+   <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="logo">My Portfolio</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="experience.html">Experience</a>
+        <a href="achievements.html">Achievements</a>
+        <a href="contact.html" class="active">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <h2>Get in Touch</h2>
+    
+    <!-- Social icons -->
+    <div class="contact-icons">
+      <a href="mailto:gurleenkaurbedi123@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/gurleen-kaur-bedi-296305314/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    </div>
+
+    <!-- Cards -->
+    <div class="contact-cards">
+      <div class="contact-card">
+        <h3>Email</h3>
+        <p>gurleenkaurbedi123@gmail.com</p>
+      </div>
+      <div class="contact-card">
+        <h3>LinkedIn</h3>
+        <p><a href="https://www.linkedin.com/in/gurleen-kaur-bedi-296305314/" target="_blank" style="color:cyan;">View Profile</a></p>
+      </div>
+    </div>
+
+  <!-- Google Form Embed (replace YOUR_FORM_ID) -->
+<div class="contact-form" style="position:relative; z-index:1; max-width:900px; margin:30px auto;">
+  <h3 style="color:cyan; text-align:center; margin-bottom:12px;">Collaborate with Me</h3>
+
+  <iframe
+    src="https://docs.google.com/forms/d/e/1FAIpQLSeB4VbC-CoCyqLYL6Uhoznnog2vIN8YLSxHB1yalj055q_2wQ/viewform?embedded=true"
+    width="100%"
+    height="640"
+    frameborder="0"
+    marginheight="0"
+    marginwidth="0"
+    style="border-radius:10px; background: rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.05);">
+    Loading…
+  </iframe>
+</div>
+<style>
+/* Stars background */
+#stars-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: black;
+  overflow: hidden;
+}
+</style>
+
+
+  <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

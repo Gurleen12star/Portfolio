@@ -1,0 +1,148 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#stars-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1; /* Push background behind everything */
+    }
+    
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #000;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* Stars (same as Home Page) */
+.stars, .stars2, .stars3 {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: transparent;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.stars { background: url('stars.png') repeat; animation: animateStars 50s linear infinite; }
+.stars2 { background: url('stars.png') repeat; animation: animateStars 100s linear infinite; opacity: 0.5; }
+.stars3 { background: url('stars.png') repeat; animation: animateStars 150s linear infinite; opacity: 0.3; }
+
+@keyframes animateStars {
+  from { background-position: 0 0; }
+  to { background-position: -10000px 5000px; }
+}
+
+/* Navbar Wrapper */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 15px 50px;
+  z-index: 1000;
+}
+
+/* Flex Container */
+.navbar .container {
+  display: flex;
+  justify-content: space-between; /* Spread links & logo apart */
+  align-items: center;
+}
+
+/* Nav Links (Left Side) */
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: cyan;
+}
+
+/* Logo (Right Side) */
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+  color: cyan;
+  text-align: right;
+}
+
+
+/* Achievements Section */
+.section-title {
+  text-align: center;
+  font-size: 36px;
+  color: cyan;
+  margin: 100px 0 20px;
+  text-shadow: 0 0 8px cyan;
+}
+
+.achievements-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Achievement Cards */
+.achievement-card {
+  background: rgba(20, 20, 20, 0.9);
+  border-radius: 12px;
+  text-align: center;
+  padding: 25px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.achievement-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 255, 255, 0.3);
+}
+
+.achievement-card:active {
+  transform: scale(0.98);
+}
+
+/* Trophy Icon */
+.achievement-card i {
+  font-size: 40px;
+  color: gold;
+  margin-bottom: 10px;
+  animation: trophyShine 2s infinite alternate;
+}
+
+@keyframes trophyShine {
+  0% { transform: rotate(0deg); color: gold; }
+  100% { transform: rotate(10deg); color: #ffd700; }
+}
+
+.achievement-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: cyan;
+}
+
+.achievement-card p {
+  font-size: 16px;
+  color: #ccc;
+}
